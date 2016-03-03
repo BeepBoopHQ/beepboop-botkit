@@ -1,6 +1,6 @@
 {
   "name": "beepboop-botkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Run a botkit bot on BeepBoopHQ",
   "main": "lib/beepboop-botkit.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "bugs": {
     "url": "https://github.com/BeepBoopHQ/beepboop-botkit/issues"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/BeepBoopHQ/beepboop-botkit"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeepBoopHQ/beepboop-botkit"
   },
   "keywords": [
     "slack",
@@ -25,6 +25,6 @@
   "author": "Chris Skudlarczyk <chris.skudlarczyk@robotsandpencils.com> (https://beepboophq.com)",
   "license": "ISC",
   "dependencies": {
-    "botkit": "0.0.7"
+    "beepboop": "0.0.6"
   }
 }
