@@ -8,7 +8,7 @@ var controller = Botkit.slackbot()
 
 // Beepboop handles the hosting and multitenancy (mulitple teams using your bot) for you.
 // Running a botkit bot on beepboop is as simple as:
-var beepboop = require('beepboop').start(controller, config)
+var beepboop = require('beepboop-botkit').start(controller, config)
 
 beepboop.on('add_resource', function (msg) {
   console.log('received request to add bot to team')
