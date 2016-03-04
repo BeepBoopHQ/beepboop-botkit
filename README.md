@@ -13,7 +13,7 @@ Supporting multiple teams from a single bot process is made simpler as beepboop-
   var Botkit = require('botkit')
 
   var controller = Botkit.slackbot()
-  require(__dirname + '/lib/beepboop-botkit.js').start(controller)
+  require('beepboop-botkit).start(controller)
 
   // listen for botkit controller events
 
@@ -23,7 +23,7 @@ Supporting multiple teams from a single bot process is made simpler as beepboop-
 
 You may (but don't necessarily need to) listen for and act on events coming from Beep Boop as such:
 
-  var beepboop = require(__dirname + '/lib/beepboop-botkit.js').start(controller)
+  var beepboop = require('beepboop-botkit').start(controller)
 
   beepboop.on('add_resource', function (msg) {
     console.log('received request to add bot to team')

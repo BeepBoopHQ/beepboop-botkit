@@ -1,12 +1,12 @@
 {
   "name": "beepboop-botkit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run a botkit bot on BeepBoopHQ",
   "main": "lib/beepboop-botkit.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "hompage": "http://beepboophq.com",
+  "homepage": "http://beepboophq.com",
   "bugs": {
     "url": "https://github.com/BeepBoopHQ/beepboop-botkit/issues"
   },
@@ -25,6 +25,7 @@
   "author": "Chris Skudlarczyk <chris.skudlarczyk@robotsandpencils.com> (https://beepboophq.com)",
   "license": "ISC",
   "dependencies": {
-    "beepboop": "0.0.6"
+    "beepboop": "0.0.7",
+    "deap": "^1.0.0"
   }
 }
