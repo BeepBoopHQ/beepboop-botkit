@@ -4,21 +4,19 @@
 var Botkit = require('botkit')
 
 var config = {
-  debug: false
+  debug: true
 }
 var controller = Botkit.slackbot(config)
 
-// Beepboop handles the hosting and multitenancy (mulitple teams using your bot) for you.
-// Running a botkit bot on beepboop is as simple as:
-var beepboop = require('./lib/beepboop-botkit').start(controller)
-// Outside of this project, you should use the npm module name vs. a rel path:
-// var beepboop = require('beepboop-botkit').start(controller)
-
-// Although not necessary, you can listen for add_resource, update_resource,
-// and remove_resource bot team events coming from Beepboop like so:
-beepboop.on('add_resource', function (msg) {
-  console.log('received request to add bot to team')
-})
+// Beepboop manages the hosting infrastructure for your bot. As part of its job,
+// it publishes events when a team adds, updates, or removes the bot, thereby
+// enabling multitenancy (multiple team instances of bot in one bot process).
+// The beepboop-botkit package listens for those events and starts/stops the
+// a given team bot automatically so you don't have to worry about it. Any state your
+// bot stores outside of the config set in your project's bot.yml file, will need
+// to account for multitency (if you allow multiple teams to run your bot)
+var beepboop = require('../lib/beepboop-botkit.js')
+beepboop.start(controller)
 
 // Listen for botkit events
 controller.on('bot_channel_join', function (bot, message) {
