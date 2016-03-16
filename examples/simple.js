@@ -8,15 +8,14 @@ var config = {
 }
 var controller = Botkit.slackbot(config)
 
-// Beepboop manages the hosting infrastructure for your bot. As part of its job,
-// it publishes events when a team adds, updates, or removes the bot, thereby
-// enabling multitenancy (multiple team instances of bot in one bot process).
-// The beepboop-botkit package listens for those events and starts/stops the
-// a given team bot automatically so you don't have to worry about it. Any state your
-// bot stores outside of the config set in your project's bot.yml file, will need
-// to account for multitency (if you allow multiple teams to run your bot)
+// Beepboop manages the hosting infrastructure for your bot and  publishes events
+// when a team adds, updates, or removes the bot, thereby enabling multitenancy
+// (multiple team instances of bot in one bot process). The beepboop-botkit package
+// listens for those events handles and starting/stopping the given team bot for you.
+// It is the develper's responsiblity to ensure any state stored outside of the configs
+// set in the project's bot.yml supports multitency (if you allow multiple teams to run your bot)
 var beepboop = require('../lib/beepboop-botkit.js')
-beepboop.start(controller)
+beepboop.start(controller, config)
 
 // Listen for botkit events
 controller.on('bot_channel_join', function (bot, message) {
