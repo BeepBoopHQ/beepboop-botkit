@@ -1,6 +1,6 @@
 {
   "name": "beepboop-botkit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Run a botkit bot on BeepBoopHQ",
   "main": "lib/beepboop-botkit.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "author": "Chris Skudlarczyk <chris.skudlarczyk@robotsandpencils.com> (https://beepboophq.com)",
   "license": "ISC",
   "dependencies": {
-    "beepboop": "0.0.7",
+    "beepboop": "0.0.9",
     "deap": "^1.0.0"
   }
 }
