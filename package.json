@@ -23,7 +23,7 @@
     "bot"
   ],
   "author": "Chris Skudlarczyk <chris.skudlarczyk@robotsandpencils.com> (https://beepboophq.com)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "beepboop": "0.0.9",
     "deap": "^1.0.0"
