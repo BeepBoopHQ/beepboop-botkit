@@ -2,7 +2,7 @@
   "name": "beepboop-botkit",
   "version": "0.0.6",
   "description": "Run a botkit bot on BeepBoopHQ",
-  "main": "lib/beepboop-botkit.js",
+  "main": "index.js",
   "scripts": {
     "test": "standard"
   },
