@@ -1,6 +1,6 @@
 {
   "name": "beepboop-botkit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Run a botkit bot on BeepBoopHQ",
   "main": "index.js",
   "scripts": {
