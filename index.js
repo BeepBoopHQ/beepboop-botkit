@@ -1,6 +1,6 @@
 'use strict'
 
-var BeepBoop = require('BeepBoop')
+var BeepBoop = require('beepboop')
 var BeepBoopBotkit = require('./lib/beepboop-botkit')
 
 exports.start = function (controller, config) {
