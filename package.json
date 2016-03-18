@@ -4,7 +4,7 @@
   "description": "Run a botkit bot on BeepBoopHQ",
   "main": "lib/beepboop-botkit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard"
   },
   "homepage": "http://beepboophq.com",
   "bugs": {
@@ -25,7 +25,10 @@
   "author": "Chris Skudlarczyk <chris.skudlarczyk@robotsandpencils.com> (https://beepboophq.com)",
   "license": "MIT",
   "dependencies": {
-    "beepboop": "0.0.9",
+    "beepboop": "~0.0.11",
     "deap": "^1.0.0"
+  },
+  "devDependencies": {
+    "standard": "^6.0.8"
   }
 }

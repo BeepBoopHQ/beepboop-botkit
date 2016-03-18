@@ -3,10 +3,7 @@
 
 var Botkit = require('botkit')
 
-var config = {
-  debug: true
-}
-var controller = Botkit.slackbot(config)
+var controller = Botkit.slackbot()
 
 // Beepboop manages the hosting infrastructure for your bot and  publishes events
 // when a team adds, updates, or removes the bot, thereby enabling multitenancy
@@ -14,8 +11,10 @@ var controller = Botkit.slackbot(config)
 // listens for those events handles and starting/stopping the given team bot for you.
 // It is the develper's responsiblity to ensure any state stored outside of the configs
 // set in the project's bot.yml supports multitency (if you allow multiple teams to run your bot)
-var beepboop = require('../lib/beepboop-botkit.js')
-beepboop.start(controller, config)
+var beepboop = require('../index.js')
+beepboop.start(controller, {
+  debug: true
+})
 
 // Listen for botkit events
 controller.on('bot_channel_join', function (bot, message) {
