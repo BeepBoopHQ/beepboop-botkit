@@ -29,7 +29,7 @@ beepboop.on('add_resource', function (msg) {
 
 see [examples/simple.js](https://github.com/BeepBoopHQ/beepboop-botkit/blob/master/examples/simple.js) for an example.
 
-## Module: beepboop-botkit events
+## Module: beepboop-botkit
 
 Module has exported function `start`
 
@@ -37,3 +37,23 @@ Module has exported function `start`
 
 * `options.debug` Boolean - Logs debug output if true
 * Returns an [EventEmitter2](https://github.com/asyncly/EventEmitter2) instance.  For more information on the events exposed, please see the underlying [`beepboop`](https://github.com/BeepBoopHQ/beepboop-js) module's documentation, as it is what is returned here.
+
+### Accessing botkit workers
+
+Since there can be multiple botkit workers spawned (1 for each team), these are exposed via a `workers` property on the returned beepboop instance after calling `start()`.  The `workers` property is an object hash where the key is a unique resource id identifying the worker, and the value is the [botkit worker](https://github.com/howdyai/botkit/blob/master/lib/Slackbot_worker.js) as returned from botkit's `spawn()` function. :
+
+```javascript
+var Botkit = require('botkit')
+var BeepBoop = require('beepboop-botkit')
+
+var controller = Botkit.slackbot()
+var beepboop = BeepBoop.start(controller)
+
+// after teams have been added
+beepboop.on('add_resource', function (message) {
+    Object.keys(beepboop.workers).forEach(function (id) {
+        // this is an instance of a botkit worker
+        var bot = beepboop.workers[id]
+    })
+})
+```
