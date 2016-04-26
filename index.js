@@ -15,7 +15,7 @@ exports.start = function (controller, config) {
   beepboop.botByTeamId = function (teamId) {
     // Get a handle on the team's botkit worker/bot
     var resourceId = Object.keys(beepboop.workers).filter(function (key) {
-      var entry = beepboop.workers[key]
+      var entry = beepboop.workers[key] || {}
       return entry.resource && entry.resource.SlackTeamID === teamId
     })[0]
 
