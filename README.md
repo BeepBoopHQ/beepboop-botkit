@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BeepBoopHQ/beepboop-botkit.svg)](https://travis-ci.org/BeepBoopHQ/beepboop-botkit)
+
 ## beepboop-botkit - Run a multi-team botkit bot on Beep Boop.
 
 `beepboop-botkit` allows bot developers to run a [Botkit](http://github.com/howdyai/botkit) based bot on the [Beep Boop HQ](http://beepboophq.com) bot hosting platform and support multiple teams.
