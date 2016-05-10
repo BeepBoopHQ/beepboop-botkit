@@ -53,9 +53,38 @@ var beepboop = BeepBoop.start(controller)
 
 // after teams have been added
 beepboop.on('add_resource', function (message) {
-    Object.keys(beepboop.workers).forEach(function (id) {
-        // this is an instance of a botkit worker
-        var bot = beepboop.workers[id]
+  Object.keys(beepboop.workers).forEach(function (id) {
+    // this is an instance of a botkit worker
+    var bot = beepboop.workers[id]
+  })
+})
+```
+
+### Additional Events
+
+#### `botkit.rtm.started` - (bot, resource, meta)
+
++ `bot` - Botkit bot instance
++ `resource` - Beep Boop resource from an [`add_resource` message](https://github.com/BeepBoopHQ/beepboop-js#event-add_resource)
++ `meta` - additional metadata about event
+ + `meta.isNew` - Boolean - `true` if this is a brand new team that was just added (only true once)
+
+After a new Slack RTM connection has been established, useful if you want to message a user right away, or after they added the bot to their team.
+
+```javascript
+// Send the user who added the bot to their team a welcome message the first time it's connected
+beepboop.on('botkit.rtm.started', function (bot, resource, meta) {
+  var slackUserId = resource.SlackUserID
+
+  if (meta.isNew && slackUserId) {
+    bot.api.im.open({ user: slackUserId }, function (err, response) {
+      if (err) {
+        return console.log(err)
+      }
+      var dmChannel = response.channel.id
+      bot.say({channel: dmChannel, text: 'Thanks for adding me to your team!'})
+      bot.say({channel: dmChannel, text: 'Just /invite me to a channel!'})
     })
+  }
 })
 ```
