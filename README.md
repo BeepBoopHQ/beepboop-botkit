@@ -72,6 +72,8 @@ beepboop.on('add_resource', function (message) {
 After a new Slack RTM connection has been established, useful if you want to message a user right away, or after they added the bot to their team.
 
 ```javascript
+var beepboop = BeepBoop.start(controller)
+
 // Send the user who added the bot to their team a welcome message the first time it's connected
 beepboop.on('botkit.rtm.started', function (bot, resource, meta) {
   var slackUserId = resource.SlackUserID
